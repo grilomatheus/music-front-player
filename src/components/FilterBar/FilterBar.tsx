@@ -31,7 +31,7 @@ const FilterBar: React.FC<FilterBarProps> = ({
         </div>
         <div className={styles.rightSection}>
           <div className={styles.switchContainer}>
-            <span>Sort from A-Z</span>
+            <span className={styles.switchLabel}>Sort from A-Z</span>
             <label className={styles.switch}>
               <input
                 type="checkbox"

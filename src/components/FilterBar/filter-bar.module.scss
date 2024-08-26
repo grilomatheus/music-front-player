@@ -4,11 +4,12 @@
 	display: flex;
 	height: 100%;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: center;	
 	align-items: center;
 	padding: toRem(50) toRem(20) toRem(40) toRem(20);
 	background-color: $grey-900;
 	color: $primary-light;
+
 	.container {
 		@extend .grid;
 		@extend .flex;
@@ -19,9 +20,15 @@
 .leftSection {
 	width: 100%;
 	display: grid;
+	justify-content: space-between;
+	align-items: center;
 	grid-template-areas:
 		"subtitle favorites"
 		"counter counter";
+
+	@include minWidth(tablet) {
+		justify-content: space-between;
+	}
 
 	@include minWidth(desktop) {
 		width: auto;
@@ -79,9 +86,23 @@
 .rightSection {
 	width: 100%;
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
-	justify-content: flex-end;
+	justify-content: center;
 	box-sizing: border-box;
+
+	
+	@include minWidth(mobile) {
+		justify-content: space-between;
+	}
+	
+	@include minWidth(tablet) {
+		justify-content: space-between;
+	}
+
+	@include minWidth(desktop) {
+		justify-content: flex-end;
+	}
 
 	@include minWidth(desktop) {
 		width: 50%;
@@ -89,6 +110,15 @@
 
 	.switchContainer {
 		@extend .flex;
+		margin: toRem(20) auto;
+
+		@include minWidth(mobile) {
+			margin: 0;
+		}
+
+		.switchLabel {
+			margin-top: toRem(2);
+		}
 
 		.switch {
 			position: relative;
@@ -139,7 +169,7 @@
 	}
 }
 
-.searchBar {
-	flex-grow: 1;
-	margin-left: toRem(20);
-}
+// .searchBar {
+// 	flex-grow: 1;
+// 	margin-left: toRem(20);
+// }

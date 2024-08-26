@@ -1,27 +1,7 @@
 import React from "react";
 import SongItem from "../SongItem/SongItem";
 import styles from "./music-list.module.scss";
-
-interface Song {
-  id: number;
-  song: {
-    title: string;
-    artist: string;
-    album: {
-      title: string;
-    };
-    files: {
-      coverArt: string;
-    };
-  };
-  isFavorite?: boolean;
-}
-
-interface MusicListProps {
-  songs: Song[];
-  onSongSelect: (song: Song) => void;
-  onToggleFavorite: (id: number) => void;
-}
+import { MusicListProps } from "../../types";
 
 const MusicList: React.FC<MusicListProps> = ({
   songs,

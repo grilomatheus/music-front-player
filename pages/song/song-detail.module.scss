@@ -35,8 +35,8 @@
 				width: toRem(204);
 				border-radius: toRem(5);
 				box-shadow: 0 toRem(4) toRem(6) rgba(0, 0, 0, 0.1);
-				margin-right: toRem(30);
 				border: toRem(1) solid $grey-100;
+				margin-right: toRem(34);
 			}
 			@include minWidth(desktop) {
 				margin: 0;
@@ -47,6 +47,7 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
+			align-items: center;
 			position: relative;
 			padding-top: 20px;
 			margin: 0 auto;
@@ -58,47 +59,45 @@
 			.topSection {
 				display: flex;
 				align-items: center;
-				gap: toRem(20);
+				gap: toRem(38);
 			}
 
 			.playButton {
-				font-size: toRem(50);
+				font-size: toRem(64);
 				color: $primary-light;
 				cursor: pointer;
 			}
 
 			.songInfo {
-				display: grid;
-				grid-template-areas:
-					"title favorite"
-					"info info";
-				h2 {
-					grid-area: title;
-					font-size: toRem(36);
-					margin: 0;
+				margin-left: 0;
+				.songTitle {
+					display: flex;
+					h2 {
+						font-size: toRem(36);
+						margin: 0;
+					}
+
+					.favoriteButton {
+						background: none;
+						border: none;
+						cursor: pointer;
+						margin-left: 22px;
+			
+						.heartIcon {
+							color: $primary-light;
+							font-size: toRem(24);
+						}
+			
+						&.favorited .heartIcon {
+							color: #F8594E;
+						}
+					}
 				}
 
-				.favoriteButton {
-					grid-area: favorite;
-					background: none;
-					border: none;
-					cursor: pointer;
-		
-					.heartIcon {
-						color: $primary-light;
-						font-size: toRem(24);
-					}
-		
-					&.favorited .heartIcon {
-						color: #F8594E;
-					}
-				}
-
-				p {
-					grid-area: info;
+				.songDesc {
 					margin: toRem(10) 0;
 					font-size: toRem(18);
-					color: #ccc;
+					color: $primary-light;
 				}
 			}
 
@@ -119,7 +118,7 @@
 
 	.suggestionsSection {
 		@extend .grid;
-		margin-top: toRem(40);
+		margin-top: toRem(94);
 		position: relative;
 		z-index: 1;
 

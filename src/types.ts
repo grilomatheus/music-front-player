@@ -16,14 +16,21 @@ export interface Song {
 	isFavorite?: boolean;
   }
   
-
-export interface SearchBarProps {
+  export interface MusicListProps {
+	songs: Song[];
+	onSongSelect: (song: Song) => void;
+	onToggleFavorite: (id: number) => void;
+  }
+  
+  // Outras interfaces...
+  
+  export interface SearchBarProps {
 	songs: Song[];
 	onSearchSelect?: (song: Song) => void;
 	maxWidth?: string;
-}
-
-export interface SongItemProps {
+  }
+  
+  export interface SongItemProps {
 	id: number;
 	song: Song["song"];
 	onSongSelect: (song: Song) => void;
@@ -31,13 +38,13 @@ export interface SongItemProps {
 	onToggleFavorite?: (id: number) => void;
   }
   
-export interface HeaderProps {
+  export interface HeaderProps {
 	showSearchBar: boolean;
 	songs?: Song[];
 	onSearchSelect?: (song: Song) => void;
-}
-
-export interface FilterBarProps {
+  }
+  
+  export interface FilterBarProps {
 	totalSongs: number;
 	showFavorites: boolean;
 	onToggleFavorites: () => void;
@@ -46,10 +53,5 @@ export interface FilterBarProps {
 	isSortedAlphabetically: boolean;
 	songs: Song[];
 	onSearchSelect: (song: Song) => void;
-}
-
-export interface MusicListProps {
-	songs: Song[];
-	onSongSelect: (song: Song) => void;
-	onToggleFavorite: (id: number) => void;
-}
+  }
+  

@@ -3,10 +3,9 @@ import styles from "./song-item.module.scss";
 import { SongItemProps } from "../../types";
 import { useFavoriteSongs } from "../../context/FavoriteSongsContext";
 
-const SongItem: React.FC<SongItemProps> = ({ id, song, onSongSelect }) => {
+const SongItem: React.FC<SongItemProps> = ({ id, song, onSongSelect, isFavorite, onToggleFavorite }) => {
   const { favorites, toggleFavorite } = useFavoriteSongs();
-
-  const isFavorite = favorites.includes(id);
+  const isFavorited = isFavorite !== undefined ? isFavorite : favorites.includes(id);
 
   const handleClick = () => {
     onSongSelect({ id, song });
@@ -14,7 +13,11 @@ const SongItem: React.FC<SongItemProps> = ({ id, song, onSongSelect }) => {
 
   const handleFavoriteClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
-    toggleFavorite(id);
+    if (onToggleFavorite) {
+      onToggleFavorite(id);
+    } else {
+      toggleFavorite(id);
+    }
   };
 
   const truncateTitle = (title: string, maxLength: number) => {
@@ -37,12 +40,12 @@ const SongItem: React.FC<SongItemProps> = ({ id, song, onSongSelect }) => {
           <p className={styles.songArtist}>{song.artist}</p>
           <button
             className={`${styles.favoriteButton} ${
-              isFavorite ? styles.favorited : ""
+              isFavorited ? styles.favorited : ""
             }`}
             onClick={handleFavoriteClick}
           >
             <i
-              className={`fa${isFavorite ? "s" : "r"} fa-heart ${
+              className={`fa${isFavorited ? "s" : "r"} fa-heart ${
                 styles.heartIcon
               }`}
             ></i>

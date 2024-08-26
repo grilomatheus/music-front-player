@@ -14,7 +14,7 @@ const HomePage: React.FC = () => {
   const [originalOrder, setOriginalOrder] = useState<Song[]>([]);
   const router = useRouter();
 
-  const { favorites } = useFavoriteSongs();
+  const { favorites, toggleFavorite } = useFavoriteSongs();
 
   useEffect(() => {
     fetch("http://localhost:3000/songs")
@@ -68,6 +68,7 @@ const HomePage: React.FC = () => {
         <MusicList
           songs={filteredSongs}
           onSongSelect={handleSongSelect}
+          onToggleFavorite={toggleFavorite}
         />
       </div>
     </div>

@@ -1,0 +1,63 @@
+@import './index.scss';
+
+// COMMON CLASSES
+.grid {
+	width: 100%;
+	max-width: toRem(1150);
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+.flex {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.rhap {
+	&_main {
+		position: relative;
+	}
+
+	&_button-clear,
+	&_volume-bar,
+	&_controls-section {
+		display: none;
+	}
+
+	&_current-time,
+	&_total-time {
+		top: toRem(20);
+		position: absolute;
+		color: #a8a8a8 !important;
+		font-size: toRem(14) !important;
+	}
+	
+	&_total-time {
+		right: 0;
+	}
+	
+	&_progress {
+		&-container {
+			margin: 0 !important;
+		}
+	
+		&-bar-show-download {
+			background-color: $primary-light !important;
+			height: toRem(2) !important;
+		}
+		
+		&-indicator {
+			top: toRem(-2) !important;
+			margin-left: 0 !important;
+			background-color: $primary-light !important;
+			width: toRem(6) !important;
+			height: toRem(6) !important;
+		}
+		
+		&-filled {
+			background-color: $grey-100 !important;
+			height: toRem(2) !important;
+		}
+	}
+}

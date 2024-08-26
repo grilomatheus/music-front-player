@@ -1,15 +1,15 @@
-@import '/styles/index.scss';
+@import '/styles/_global.scss';
 
 .songItem {
 	position: relative;
 	cursor: pointer;
 	transition: transform 0.2s ease-in-out;
 	width: 100%;
-	max-width: 204px;
-	height: 282px;
+	max-width: toRem(204);
+	height: toRem(282);
 	background-color: $grey-800;
-	border-radius: 5px;
-	box-shadow: 0px 0px 4px 0px $grey-800;
+	border-radius: toRem(5);
+	box-shadow: 0 0 toRem(4) 0 $grey-800;
 
 	&:hover {
 		transform: scale(1.05);
@@ -17,24 +17,24 @@
 
 	.songCover {
 		width: 100%;
-		border-top-left-radius: 5px;
-		border-top-right-radius: 5px;
+		border-top-left-radius: toRem(5);
+		border-top-right-radius: toRem(5);
 	}
 
 	.songDetails {
 		width: 100%;
-		max-width: 200px;
-		padding: 0 16px;
+		max-width: toRem(200);
+		padding: 0 toRem(16);
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
 		justify-content: space-between;
 		box-sizing: border-box;
-		margin-top: 14px;
+		margin-top: toRem(14);
 
 		.songTitle {
 			grid-area: title;
-			font-size: 18px;
+			font-size: toRem(18);
 			font-weight: 600;
 		}
 		.songInfo {
@@ -43,10 +43,10 @@
 			.songArtist {
 				grid-area: artist;
 				width: 100%;
-				max-width: 140px;
+				max-width: toRem(140);
 				color: $grey-100;
-				margin-top: 8px;
-				font-size: 12px;
+				margin-top: toRem(8);
+				font-size: toRem(12);
 				font-weight: 600;
 			}
 	
@@ -61,9 +61,9 @@
 				color: $primary-light;
 	
 				.heartIcon {
-					font-size: 20px;
-					width: 20px;
-					height: 20px;
+					font-size: toRem(20);
+					width: toRem(20);
+					height: toRem(20);
 				}
 			}
 	

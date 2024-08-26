@@ -1,10 +1,10 @@
-@import '/styles/index.scss';
+@import '/styles/_global.scss';
 
 .songDetailPage {
 	color: $primary-light;
 	background-color: $secondary-darker;
-	padding: 0 20px;
-	height: calc(100vh - 80px);
+	padding: 0 toRem(20);
+	height: calc(100vh - toRem(80));
 
 	.mainSection {
 		@extend .grid;
@@ -13,17 +13,17 @@
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
-		padding-top: 73px;
-		margin-bottom: 30px;
+		padding-top: toRem(73);
+		margin-bottom: toRem(30);
 		z-index: 0;
 
 		.backgroundPoster {
 			width: 100%;
-			max-width: 400px;
-			top: 10px;
+			max-width: toRem(400);
+			top: toRem(10);
 			opacity: 0.5;
 			position: absolute;
-			right: 0px;
+			right: 0;
 			background: linear-gradient(90deg, #12303B 0%, rgba(18, 48, 59, 0.00) 100%);
 		}
 
@@ -31,11 +31,11 @@
 			position: relative;
 			z-index: 1;
 			img {
-				width: 204px;
-				border-radius: 5px;
-				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-				margin-right: 30px;
-				border: 1px solid $grey-100;
+				width: toRem(204);
+				border-radius: toRem(5);
+				box-shadow: 0 toRem(4) toRem(6) rgba(0, 0, 0, 0.1);
+				margin-right: toRem(30);
+				border: toRem(1) solid $grey-100;
 			}
 		}
 
@@ -48,11 +48,11 @@
 			.topSection {
 				display: flex;
 				align-items: center;
-				gap: 20px;
+				gap: toRem(20);
 			}
 
 			.playButton {
-				font-size: 50px;
+				font-size: toRem(50);
 				color: $primary-light;
 				cursor: pointer;
 			}
@@ -64,7 +64,7 @@
 					"info info";
 				h2 {
 					grid-area: title;
-					font-size: 36px;
+					font-size: toRem(36);
 					margin: 0;
 				}
 
@@ -76,7 +76,7 @@
 		
 					.heartIcon {
 						color: $primary-light;
-						font-size: 24px;
+						font-size: toRem(24);
 					}
 		
 					&.favorited .heartIcon {
@@ -86,16 +86,16 @@
 
 				p {
 					grid-area: info;
-					margin: 10px 0;
-					font-size: 18px;
+					margin: toRem(10) 0;
+					font-size: toRem(18);
 					color: #ccc;
 				}
 			}
 
 			.audioSection {
-				margin-top: 20px;
+				margin-top: toRem(20);
 				width: 100%;
-				max-width: 350px;
+				max-width: toRem(350);
 
 				.audioPlayer {
 					background: transparent;
@@ -110,21 +110,21 @@
 
 	.suggestionsSection {
 		@extend .grid;
-		margin-top: 40px;
+		margin-top: toRem(40);
 		position: relative;
 		z-index: 1;
 
 		h5 {
-			font-size: 16px;
+			font-size: toRem(16);
 			font-style: normal;
 			font-weight: 500;
-			margin-bottom: 20px;
+			margin-bottom: toRem(20);
 		}
 
 		.suggestionsList {
 			display: flex;
 			flex-wrap: wrap;
-			gap: 20px;
+			gap: toRem(20);
 		}
 	}
 }

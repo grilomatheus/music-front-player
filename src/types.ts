@@ -1,20 +1,21 @@
 export interface Song {
 	id: number;
 	song: {
+	  title: string;
+	  artist: string;
+	  album: {
 		title: string;
-		artist: string;
-		album: {
-			title: string;
-			year: number;
-		};
-		files: {
-			coverArt: string;
-			poster: string;
-			audio: string;
-		};
+		year?: number;
+	  };
+	  files: {
+		coverArt: string;
+		poster?: string;
+		audio?: string;
+	  };
 	};
 	isFavorite?: boolean;
-}
+  }
+  
 
 export interface SearchBarProps {
 	songs: Song[];
@@ -26,8 +27,10 @@ export interface SongItemProps {
 	id: number;
 	song: Song["song"];
 	onSongSelect: (song: Song) => void;
-}
-
+	isFavorite?: boolean;
+	onToggleFavorite?: (id: number) => void;
+  }
+  
 export interface HeaderProps {
 	showSearchBar: boolean;
 	songs?: Song[];

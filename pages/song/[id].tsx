@@ -7,6 +7,7 @@ import "react-h5-audio-player/lib/styles.css";
 import styles from "./song-detail.module.scss";
 import { Song } from "../../src/types";
 import { useFavoriteSongs } from "../../src/context/FavoriteSongsContext";
+import MusicLoading from "../../src/components/FilterBar/MusicLoading/MusicLoading";
 
 const SongDetailPage: React.FC = () => {
 	const router = useRouter();
@@ -148,7 +149,7 @@ const SongDetailPage: React.FC = () => {
 						</div>
 					</>
 				) : (
-					<p>Loading...</p>
+					<MusicLoading  />
 				)}
 			</div>
 		</>

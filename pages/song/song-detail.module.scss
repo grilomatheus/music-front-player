@@ -4,8 +4,12 @@
 	color: $primary-light;
 	background-color: $secondary-darker;
 	padding: 0 toRem(20);
+	padding-bottom: 20px;
 	height: 100%;
-	height: calc(100vh - toRem(80));
+
+	@include minWidth(desktop) {
+		height: calc(100vh - toRem(80));
+	}
 
 	.mainSection {
 		@extend .grid;
@@ -140,9 +144,23 @@
 		}
 
 		.suggestionsList {
-			display: flex;
+			@extend .grid;
+			@extend .flex;
 			flex-wrap: wrap;
-			gap: toRem(20);
+		
+			@include minWidth(mobile) {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+				gap: toRem(32);
+			}
+		}
+		
+		.suggestionsList>*:nth-last-child(1):nth-child(5n + 1),
+		.suggestionsList>*:nth-last-child(2):nth-child(5n + 2),
+		.suggestionsList>*:nth-last-child(3):nth-child(5n + 3),
+		.suggestionsList>*:nth-last-child(4):nth-child(5n + 4),
+		.suggestionsList>*:nth-last-child(5):nth-child(5n + 5) {
+			justify-self: start;
 		}
 	}
 }

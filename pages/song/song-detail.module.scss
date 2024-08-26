@@ -29,6 +29,7 @@
 
 		.songPoster {
 			position: relative;
+			margin: 0 auto;
 			z-index: 1;
 			img {
 				width: toRem(204);
@@ -37,6 +38,9 @@
 				margin-right: toRem(30);
 				border: toRem(1) solid $grey-100;
 			}
+			@include minWidth(desktop) {
+				margin: 0;
+			}
 		}
 
 		.songDetails {
@@ -44,6 +48,12 @@
 			flex-direction: column;
 			justify-content: center;
 			position: relative;
+			padding-top: 20px;
+			margin: 0 auto;
+			
+			@include minWidth(desktop) {
+				margin: 0;
+			}
 
 			.topSection {
 				display: flex;
@@ -102,7 +112,6 @@
 					color: $primary-light;
 					border: 0;
 					box-shadow: none;
-
 				}
 			}
 		}

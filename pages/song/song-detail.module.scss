@@ -4,6 +4,7 @@
 	color: $primary-light;
 	background-color: $secondary-darker;
 	padding: 0 toRem(20);
+	height: 100%;
 	height: calc(100vh - toRem(80));
 
 	.mainSection {
@@ -31,16 +32,19 @@
 			position: relative;
 			margin: 0 auto;
 			z-index: 1;
+
 			img {
 				width: toRem(204);
 				border-radius: toRem(5);
 				box-shadow: 0 toRem(4) toRem(6) rgba(0, 0, 0, 0.1);
 				border: toRem(1) solid $grey-100;
 				margin: 0;
+
 				@include minWidth(desktop) {
 					margin-right: toRem(34);
 				}
 			}
+
 			@include minWidth(desktop) {
 				margin: 0;
 			}
@@ -54,8 +58,9 @@
 			position: relative;
 			padding-top: toRem(20);
 			margin: 0 auto;
-			
-			@include minWidth(desktop) {
+
+			@include minWidth(tablet) {
+				align-items: flex-start;
 				margin: 0;
 			}
 
@@ -73,8 +78,10 @@
 
 			.songInfo {
 				margin-left: 0;
+
 				.songTitle {
 					display: flex;
+
 					h2 {
 						font-size: toRem(36);
 						margin: 0;
@@ -85,12 +92,12 @@
 						border: none;
 						cursor: pointer;
 						margin-left: toRem(22);
-			
+
 						.heartIcon {
 							color: $primary-light;
 							font-size: toRem(24);
 						}
-			
+
 						&.favorited .heartIcon {
 							color: #F8594E;
 						}

@@ -2,13 +2,27 @@
 
 .musicList {
 	background-color: $grey-900;
-	background-color: $grey-900;
 	padding: 0 toRem(20);
 	margin-bottom: toRem(20);
   }
+  
   .container {
 	@extend .grid;
-	display: flex;
+	@extend .flex;
 	flex-wrap: wrap;
-	gap: toRem(32);
+
+	@include minWidth(mobile) {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+		gap: toRem(32);
+	}
   }
+  
+  .container > *:nth-last-child(1):nth-child(5n + 1),
+  .container > *:nth-last-child(2):nth-child(5n + 2),
+  .container > *:nth-last-child(3):nth-child(5n + 3),
+  .container > *:nth-last-child(4):nth-child(5n + 4),
+  .container > *:nth-last-child(5):nth-child(5n + 5) {
+	justify-self: start;
+  }
+  

@@ -5,11 +5,18 @@
 	cursor: pointer;
 	transition: transform 0.2s ease-in-out;
 	width: 100%;
-	max-width: toRem(204);
+	max-width: toRem(170);
+	gap: 32px;
 	height: toRem(282);
 	background-color: $grey-800;
 	border-radius: toRem(5);
+	margin-bottom: toRem(20);
 	box-shadow: 0 0 toRem(4) 0 $grey-800;
+
+	@include minWidth(mobile) {
+		margin-bottom: 0;
+		max-width: toRem(204);
+	}
 
 	&:hover {
 		transform: scale(1.05);

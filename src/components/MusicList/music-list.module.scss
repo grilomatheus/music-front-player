@@ -1,0 +1,14 @@
+@import '/styles/index.scss';
+
+.musicList {
+	background-color: $grey-900;
+	background-color: $grey-900;
+	padding: 0 20px;
+	margin-bottom: 20px;
+  }
+  .container {
+	@extend .grid;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 32px;
+  }

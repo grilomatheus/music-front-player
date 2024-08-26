@@ -1,0 +1,24 @@
+// TITLE
+@font-face {
+    font-family: 'Nokora';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Nokora Regular'), url('/assets/fonts/Nokora-Black.ttf') format('truetype');
+}
+
+// TEXT
+@font-face {
+	font-family: "Articulat";
+	src: url("/assets/fonts/ArticulatCF-Medium.otf");
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: "Articulat";
+	src: url("/assets/fonts/ArticulatCF-Normal.otf");
+	font-weight: 500;
+}
+
+// VARIABLES
+$font-primary: "Articulat";
+$font-secondary: "Nokora";

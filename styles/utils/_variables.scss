@@ -1,0 +1,26 @@
+// FONT SIZE
+$primary-title-size: 72;
+$title-desktop: 64;
+$title-mobile: 48;
+$text-size: 14;
+
+// PALETTE
+$primary-light: #ffffff;
+$secondary-darker: #12303B;
+$grey-100: #666666;
+$grey-200: #545454;
+$grey-400: #404040;
+$grey-600: #1d1d1d;
+$grey-800: #262626;
+$grey-900: #000000;
+$grey-rgba: rgba(255, 255, 255, 0.5);
+
+// MEDIA QUERIES
+$breakpoints: (
+	"mobile": 360px,
+	"tablet": 768px,
+	"desktop": 1024px,
+	"desktop-large": 1280px,
+);
+
+$grid: 1440

@@ -1,0 +1,69 @@
+@import '/styles/index.scss';
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
+
+.searchBar {
+	position: relative;
+	width: 100%;
+	max-width: 100%;
+
+	&::before {
+		content: '\f002';
+		font-family: 'Font Awesome 5 Free';
+		font-weight: 900;
+		position: absolute;
+		left: 8px;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 20px;
+		color: $primary-light;
+	}
+
+	.searchField {
+		width: 100%;
+		height: 36px;
+		padding: 0 10px 0 36px;
+		box-sizing: border-box;
+		border-radius: 8px;
+		border: 0;
+		background-color: $grey-800;
+		color: $primary-light;
+		font-family: $font-primary, sans-serif;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 500;
+	
+		&:focus {
+			color: $primary-light;
+			background-color: $grey-400;
+		}
+		&::placeholder {
+			color: $primary-light;
+		}
+	}
+	.suggestions {
+		width: 100%;
+		list-style-type: none;
+		margin-top: 6px;
+		padding: 0;
+		background-color: #2D2D2D;
+		border-radius: 4px;
+		position: absolute;
+		z-index: 1;
+	
+		.suggestionItem {
+			position: relative;
+			padding: 10px;
+			cursor: pointer;
+			color: #d1d1d1;
+			border-bottom: 1px solid $grey-200;
+			&:last-child {
+				border-bottom: 0;
+			}
+			&:hover {
+				background-color: #333333;
+			}
+		}
+	}
+}
+
+

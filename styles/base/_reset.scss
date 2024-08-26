@@ -1,0 +1,46 @@
+// DEFAULT RESET STYLE
+@import '../index.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    font-family: $font-primary, sans-serif;
+	font-size: toRem($text-size);
+    font-weight: 400;
+	color: $primary-light;
+}
+
+html {
+  font-size: 100%;
+  background: $grey-900;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+ul,p,div,a {
+  list-style: none;
+}
+
+svg {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  color: $grey-100;
+}
+
+textarea:focus,
+input:focus,
+select:focus,
+button:focus {
+  box-shadow: 0 0 0 0;
+  outline: 0;
+}

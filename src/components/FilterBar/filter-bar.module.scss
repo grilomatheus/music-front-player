@@ -1,0 +1,145 @@
+@import '/styles/index.scss';
+
+.filterBar {
+	display: flex;
+	height: 100%;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 50px 20px 40px 20px;
+	background-color: $grey-900;
+	color: $primary-light;
+	.container {
+		@extend .grid;
+		@extend .flex;
+		flex-wrap: wrap;
+	}
+}
+
+.leftSection {
+	width: 100%;
+	display: grid;
+	grid-template-areas:
+		"subtitle favorites"
+		"counter counter";
+
+	@include minWidth(desktop) {
+		width: auto;
+	}
+
+	.subtitle {
+		grid-area: subtitle;
+		font-size: 32px;
+		font-style: normal;
+		font-weight: 600;
+	}
+
+	.counter {
+		grid-area: counter;
+		margin: 5px 0;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 500;
+		color: $grey-rgba;
+	}
+
+	.favoritesButton {
+		@extend .flex;
+		grid-area: favorites;
+		width: 100%;
+		max-width: 135px;
+		margin-left: 20px;
+		background-color: $grey-600;
+		color: $primary-light;
+		border: none;
+		height: 36px;
+		padding: 0px 24px;
+		border-radius: 20px;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 600;
+		cursor: pointer;
+		gap: 8px;
+
+		&:hover {
+			background-color: $grey-400;
+		}
+
+		.heartIcon {
+			color: $primary-light;
+			font-size: 20px;
+		}
+
+		&.favorited .heartIcon {
+			color: #F8594E;
+		}
+	}
+}
+
+.rightSection {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	box-sizing: border-box;
+
+	@include minWidth(desktop) {
+		width: 50%;
+	}
+
+	.switchContainer {
+		@extend .flex;
+
+		.switch {
+			position: relative;
+			display: inline-block;
+			width: 58px;
+			height: 32px;
+			margin-left: 10px;
+			margin-right: 20px;
+
+			input {
+				opacity: 0;
+				width: 0;
+				height: 0;
+
+				&:checked+.slider {
+					background-color: #00DAE8;
+				}
+
+				&:checked+.slider:before {
+					transform: translateX(26px);
+				}
+			}
+
+			.slider {
+				position: absolute;
+				cursor: pointer;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: $grey-400;
+				transition: .4s;
+				border-radius: 34px;
+
+				&:before {
+					position: absolute;
+					content: "";
+					height: 28px;
+					width: 28px;
+					left: 2px;
+					bottom: 2px;
+					background-color: $primary-light;
+					transition: .4s;
+					border-radius: 50%;
+				}
+			}
+		}
+	}
+}
+
+.searchBar {
+	flex-grow: 1;
+	margin-left: 20px;
+}

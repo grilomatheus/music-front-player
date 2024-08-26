@@ -4,7 +4,7 @@
 	color: $primary-light;
 	background-color: $secondary-darker;
 	padding: 0 toRem(20);
-	padding-bottom: 20px;
+	padding-bottom: toRem(20);
 	height: 100%;
 
 	@include minWidth(desktop) {
@@ -150,7 +150,7 @@
 		
 			@include minWidth(mobile) {
 				display: grid;
-				grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+				grid-template-columns: repeat(auto-fill, minmax(toRem(180), 1fr));
 				gap: toRem(32);
 			}
 		}
